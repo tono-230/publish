@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ODNリプレイスに向けた 3年後のOWNDAYSディスカッション資料</title><style>
+:root{
+ --black:#0d0d0d;--black-soft:#171717;--paper:#f5f2eb;--white:#fff;--gold:#c9a84c;
+ --ink:#171717;--muted:#6f6b63;--border:#ddd6c8;--panel:#fffdf9;
+ --slide-x:clamp(48px,5vw,96px);--slide-y:clamp(32px,4vh,60px);
+ --radius-card:16px;--radius-panel:22px;--shadow:0 18px 50px rgba(62,48,13,.08);
+ --title:clamp(36px,3.15vw,58px);--subtitle:clamp(21px,1.65vw,31px);
+ --card-title:clamp(17px,1.15vw,22px);--body:clamp(14px,.96vw,18px);--small:clamp(12px,.78vw,15px);
+}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",Arial,sans-serif;background:#080808;color:#fff}
+button{font:inherit}.deck{position:relative;width:100%;height:100%}.slide{position:absolute;inset:0;display:none;overflow:hidden}.slide.active{display:block}
+.slide--dark{background:linear-gradient(135deg,#191919 0%,#0d0d0d 72%);color:#fff}.slide--light{background:linear-gradient(145deg,#fffdf8 0%,var(--paper) 100%);color:var(--ink)}
+.slide__inner{position:relative;width:100%;height:100%;padding:var(--slide-y) var(--slide-x) calc(var(--slide-y) + 20px);display:flex;flex-direction:column;justify-content:center}
+.slide__inner:before{content:"";position:absolute;top:22px;left:var(--slide-x);right:var(--slide-x);height:2px;background:linear-gradient(90deg,var(--gold),transparent 78%)}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(46px,5.2vw,86px);line-height:1.13;letter-spacing:-.045em}h2{font-size:var(--title);line-height:1.15;letter-spacing:-.035em}h3{font-size:var(--card-title);line-height:1.3}p,li{font-size:var(--body);line-height:1.55}.eyebrow{font-size:var(--small);font-weight:900;letter-spacing:.16em;color:var(--gold);margin-bottom:.7vh}.gold{color:var(--gold)}
+.slide-footer{position:absolute;left:var(--slide-x);right:var(--slide-x);bottom:18px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#8b8b8b}.slide--light .slide-footer{color:#777}
+.cover .hero{max-width:1220px}.cover .rule{width:112px;height:4px;background:var(--gold);margin-top:2.2vh}.cover .purpose{margin-top:1.6vh;color:#bdb8ad;font-size:clamp(14px,1vw,18px)}
+.decision-header,.vision-header{margin-bottom:2vh}.headline-sub{margin-top:.85vh;font-size:var(--subtitle);font-weight:900;line-height:1.4;color:#5d574b;border-left:5px solid var(--gold);padding:.25em 0 .25em .9em}.slide--dark .headline-sub{color:#f3ecd9;background:rgba(201,168,76,.08);border-radius:0 12px 12px 0;max-width:1080px}
+.decision-comparison{display:grid;grid-template-columns:1fr 1fr;gap:1.2vw}.decision-column{border:1px solid var(--border);border-radius:var(--radius-panel);background:rgba(255,255,255,.82);padding:1.3vw;box-shadow:var(--shadow)}.decision-column.future{border:2px solid var(--gold);background:#fffaf0}.decision-column .label{display:inline-flex;padding:.38em .8em;border-radius:999px;font-size:var(--small);font-weight:900;background:#dedbd5;color:#555;margin-bottom:.8vh}.decision-column.future .label{background:var(--gold);color:#fff}.decision-list{display:grid;gap:.65vw}.decision-item{min-height:6.6vh;border:1px solid #e0ddd6;border-radius:12px;background:#fff;padding:.8vw .95vw;display:flex;align-items:center;font-weight:750;font-size:var(--body)}.decision-column.future .decision-item{background:#fffdf7;border-color:#dfcf9f}.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1vw;margin-top:1.2vh}.role-card{border:1px solid var(--border);border-radius:var(--radius-card);background:rgba(255,255,255,.76);padding:1.05vw 1.15vw}.role-card b{display:block;color:var(--gold);font-size:var(--card-title);margin-bottom:.35em}.role-card span{font-size:var(--body);line-height:1.5;color:#48443d}
+.vision-layout{display:grid;grid-template-columns:1fr .3fr 1fr;gap:1.1vw;align-items:stretch}.vision-group{border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(255,255,255,.035);padding:1vw}.vision-group h3{color:var(--gold);font-size:clamp(20px,1.35vw,26px);margin-bottom:.65vh}.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65vw}.vision-card{border:1px solid rgba(201,168,76,.42);border-radius:12px;background:rgba(255,255,255,.045);padding:.72vw .78vw;min-height:8vh;display:flex;flex-direction:column;justify-content:center}.vision-card b{color:var(--gold);font-size:clamp(13px,.92vw,17px);line-height:1.3}.vision-card span{margin-top:.25em;color:#d2d2d2;font-size:clamp(10px,.72vw,13px);line-height:1.35}.ai-axis{position:relative;border:1px solid var(--gold);border-radius:16px;background:linear-gradient(180deg,rgba(201,168,76,.20),rgba(201,168,76,.06));display:flex;align-items:center;justify-content:center;text-align:center;padding:.7vw}.ai-axis:before,.ai-axis:after{content:"";position:absolute;top:50%;width:1.1vw;height:1px;background:var(--gold)}.ai-axis:before{right:100%}.ai-axis:after{left:100%}.ai-axis b{display:block;color:var(--gold);font-size:clamp(15px,1.05vw,20px);line-height:1.25}.ai-axis p{font-size:clamp(10px,.7vw,13px);line-height:1.45;margin-top:.55vh;color:#f1ead8}.ai-pills{display:flex;flex-wrap:wrap;gap:.3vw;justify-content:center;margin-top:.75vh}.ai-pills span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.24em .48em;font-size:10px}.foundation-bar{margin-top:.85vh;border:2px solid var(--gold);border-radius:14px;background:rgba(201,168,76,.09);padding:.76vw 1vw;text-align:center}.foundation-bar b{display:block;color:var(--gold);font-size:clamp(18px,1.25vw,24px)}.foundation-bar span{display:block;margin-top:.18em;color:#d5d5d5;font-size:clamp(10px,.72vw,13px)}
+.service-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.6vh}.service-header h2 span{color:var(--gold)}.category-pill{border:1px solid var(--gold);color:#8d6f17;border-radius:999px;padding:.42em .9em;font-size:var(--small);font-weight:900;background:rgba(255,255,255,.55)}.service-content{display:flex;flex-direction:column;gap:1vw}.comparison{display:grid;grid-template-columns:1fr 48px 1fr;align-items:stretch}.comparison-panel{border-radius:var(--radius-panel);padding:1.35vw;min-height:28vh}.comparison-panel--current{background:#ece8e1;border:1px solid #d5cec2}.comparison-panel--future{background:#fff;border:2px solid var(--gold);box-shadow:var(--shadow)}.panel-label{font-size:11px;letter-spacing:.14em;font-weight:900;color:#8a867f;margin-bottom:.55vh}.comparison-panel--future .panel-label{color:#9b781a}.comparison-panel h3{font-size:clamp(22px,1.55vw,28px);margin-bottom:.65vh}.comparison-panel ul{margin:.5vh 0 0;padding-left:1.1em}.comparison-panel li{margin:.45em 0}.comparison-connector{display:grid;place-items:center}.comparison-connector span{position:relative;width:30px;height:1px;background:var(--gold)}.comparison-connector span:after{content:"";position:absolute;right:-1px;top:-4px;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:7px solid var(--gold)}.decision-scenario-grid{display:grid;grid-template-columns:.9fr 1.55fr;gap:1vw}.decision-card,.scenario-card{border:1px solid var(--border);border-radius:var(--radius-card);padding:1.05vw 1.15vw;background:rgba(255,255,255,.76)}.decision-card{background:rgba(201,168,76,.09);border-color:#d7c386}.card-kicker{font-size:10px;letter-spacing:.13em;color:#8c7540;font-weight:900;margin-bottom:.3vh}.decision-card h3,.scenario-card h3{color:#8d6f17;margin-bottom:.5vh}.scenario-card p{color:#403d37}.tag-list,.department-list{display:flex;flex-wrap:wrap;gap:.42vw}.tag{border:1px solid #d9cfb8;border-radius:999px;background:rgba(255,255,255,.72);padding:.4em .7em;font-size:var(--small);line-height:1.2}.service-metadata{display:grid;grid-template-columns:1fr 1fr 1.15fr;border:1px solid #d9cfb8;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.66)}.service-metadata section{padding:.88vw 1vw;border-right:1px solid #d9cfb8}.service-metadata section:last-child{border-right:0}.service-metadata b{display:block;color:#8d6f17;font-size:var(--small);margin-bottom:.38em}.service-metadata p{font-size:var(--small);line-height:1.45;color:#49453e}
+.final-slide .slide__inner{justify-content:center;padding-top:4.2vh;padding-bottom:5.8vh}.discussion-section,.architecture-section{width:100%}.discussion-section h2,.architecture-section h2{font-size:clamp(27px,2.2vw,40px)}.discussion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8vw;margin-top:.8vh}.discussion-card{border:1px solid var(--border);border-radius:14px;background:#fff;padding:.8vw .9vw;min-height:8.8vh}.discussion-card b{display:block;color:#8d6f17;font-size:var(--card-title);margin-bottom:.22em}.discussion-card span{font-size:var(--small);line-height:1.42;color:#49453d}.discussion-note{margin-top:.75vh;border-left:4px solid var(--gold);background:rgba(201,168,76,.09);padding:.7vw .9vw;font-size:clamp(14px,1vw,18px);font-weight:850}.architecture-section{margin-top:4.2vh;border-top:1px solid #d7cfbf;padding-top:2.1vh}.architecture-context{margin:.7vh 0 .9vh;border-left:4px solid var(--gold);background:rgba(201,168,76,.09);padding:.7vw .9vw;font-size:clamp(14px,1vw,18px);font-weight:850;line-height:1.45;color:var(--text)}.architecture-stack{margin-top:.55vh;display:grid;grid-template-rows:auto auto auto;gap:.85vh}.architecture-layer{display:flex;flex-direction:column}.layer-label{font-size:11px;letter-spacing:.12em;font-weight:900;color:#816c35;margin-bottom:.42vh}.app-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.48vw}.arch-card{border:1px solid #d9cfb8;border-radius:10px;background:#fff;padding:.48vw .38vw;min-height:5.7vh;display:flex;align-items:center;justify-content:center;text-align:center;font-size:clamp(10px,.7vw,13px);font-weight:850;line-height:1.25}.app-grid .arch-card{grid-column:auto}.intel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.55vw}.intel-card{border:1px solid #cdb96f;border-radius:10px;background:#f8f2e4;padding:.55vw .6vw;min-height:5.7vh;text-align:center}.intel-card b{display:block;font-size:clamp(11px,.78vw,14px);color:#6f5a20}.intel-card span{display:block;margin-top:.2em;font-size:clamp(9px,.64vw,11px);line-height:1.3;color:#625d53}.platform-foundation{border:2px solid var(--gold);border-radius:12px;background:linear-gradient(135deg,rgba(201,168,76,.2),rgba(201,168,76,.06));padding:.6vw .8vw;text-align:center}.platform-foundation b{display:block;color:#4e4120;font-size:clamp(15px,1.05vw,19px)}.platform-foundation span{font-size:clamp(10px,.72vw,13px);color:#57534b}
+.edge{position:fixed;top:0;bottom:0;width:10vw;z-index:20;cursor:pointer}.edge.left{left:0}.edge.right{right:0}.nav{position:fixed;top:50%;transform:translateY(-50%);z-index:30;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.32);background:rgba(10,10,10,.72);color:#fff;font-size:20px;display:grid;place-items:center;cursor:pointer}.nav.left{left:14px}.nav.right{right:14px}.mobile-nav{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}.mobile-nav button{min-height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.28);background:rgba(10,10,10,.86);color:#fff;font-size:16px;font-weight:800;padding:0 16px}.mobile-count{min-width:72px;text-align:center;color:#ddd;font-size:12px;padding:8px 10px;border-radius:999px;background:rgba(0,0,0,.55)}
+@media(max-width:1000px){html,body{overflow:auto}.slide{position:relative;display:none;min-height:100vh;overflow-y:auto}.slide.active{display:block}.slide__inner{height:auto;min-height:100vh;padding:4.5vh 4vw 12vh}.slide__inner:before{left:4vw;right:4vw}.nav{display:none}.mobile-nav{display:grid}.edge{width:20vw}.decision-comparison,.role-grid,.vision-layout,.service-grid,.comparison,.decision-scenario-grid,.service-metadata,.discussion-grid,.intel-grid{grid-template-columns:1fr}.comparison-connector,.ai-axis:before,.ai-axis:after{display:none}.app-grid{grid-template-columns:1fr 1fr}.app-grid .arch-card{grid-column:auto}.service-metadata section{border-right:0;border-bottom:1px solid #d9cfb8}.service-metadata section:last-child{border-bottom:0}.slide-footer{left:4vw;right:4vw;bottom:8.5vh}.final-slide .slide__inner{padding-top:4.5vh}}
+</style></head><body><div class="deck">
+<section class="slide slide--dark cover active"><div class="slide__inner"><div class="hero"><div class="eyebrow">ODN REPLACEMENT / BUSINESS DISCUSSION DRAFT</div><h1>ODNリプレイスに向けた<br><span class="gold">3年後のOWNDAYS</span><br>ディスカッション資料</h1><div class="rule"></div><p class="purpose">3年後の業務を定義し、必要なサービス・アプリケーション・共通基盤を議論する</p></div><footer class="slide-footer"><span>3年後のOWNDAYSディスカッション</span><span class="slide-number"></span></footer></div></section>
+<section class="slide slide--light"><div class="slide__inner"><header class="decision-header"><div class="eyebrow">HOW WORK AND DECISIONS CHANGE</div><h2>業務と意思決定をどう変えるか</h2><div class="headline-sub">人は情報を集める仕事から、意思決定する仕事へ。</div></header><main><div class="decision-comparison"><section class="decision-column"><div class="label">現在</div><div class="decision-list"><div class="decision-item">必要な情報を探し、各部門から集める</div><div class="decision-item">Excelで集計・照合する</div><div class="decision-item">会議資料を作り、状況を説明する</div><div class="decision-item">人が依頼し、進捗と例外を追う</div></div></section><section class="decision-column future"><div class="label">3年後</div><div class="decision-list"><div class="decision-item">情報は自動で集約され、いつでも確認できる</div><div class="decision-item">AIが変化・リスク・異常を捉える</div><div class="decision-item">AIが選択肢と推奨案を整理する</div><div class="decision-item">人が方針・優先順位・例外を判断する</div></div></section></div><div class="role-grid"><article class="role-card"><b>事実を集め、つなぐ</b><span>データ・システム：収集、一元管理、更新、定型処理、決定内容の反映</span></article><article class="role-card"><b>判断材料をつくる</b><span>AI：業務データから変化・リスク・選択肢を整理し、意思決定を支援</span></article><article class="role-card"><b>決めて動かす</b><span>人：方針、優先順位、顧客価値、交渉、例外対応、最終意思決定</span></article></div></main><footer class="slide-footer"><span>意思決定の共通モデル</span><span class="slide-number"></span></footer></div></section>
+<section class="slide slide--dark"><div class="slide__inner"><header class="vision-header"><div class="eyebrow">THREE-YEAR ENTERPRISE VISION</div><h2>3年後のOWNDAYS全体像（仮案）</h2><div class="headline-sub">各業務領域が3年後に実現したい状態を揃え、リプレイスの起点にする。</div></header><main><div class="vision-layout"><section class="vision-group"><h3>経営・成長基盤</h3><div class="service-grid"><div class="vision-card"><b>01 経営・事業計画</b><span>目標・投資・収益・人員</span></div><div class="vision-card"><b>02 財務・ガバナンス</b><span>会計・支払・統制・リスク</span></div><div class="vision-card"><b>03 事業開発・店舗開発</b><span>立地・設計施工・アライアンス</span></div><div class="vision-card"><b>04 人材・スキル・教育</b><span>採用・配置・育成・評価</span></div><div class="vision-card"><b>05 海外・グローバル運営</b><span>共通化・ローカル要件</span></div><div class="vision-card"><b>06 マーケティング・EC</b><span>CRM・オムニチャネル・APP</span></div></div></section><aside class="ai-axis"><div><b>AI DECISION LAYER</b><p>業務データから変化・リスク・選択肢を整理し、意思決定を支援</p><div class="ai-pills"><span>把握</span><span>予測</span><span>比較</span><span>推奨</span><span>異常検知</span></div></div></aside><section class="vision-group"><h3>OWNDAYSエコシステム</h3><div class="service-grid"><div class="vision-card"><b>07 商品企画</b><span>商品戦略・商品構成</span></div><div class="vision-card"><b>08 商品計画</b><span>PLM・仕様・数量計画・発注</span></div><div class="vision-card"><b>09 調達・生産・品質</b><span>原価・生産・進捗・品質</span></div><div class="vision-card"><b>10 貿易・物流</b><span>輸送・通関・ETA・入荷</span></div><div class="vision-card"><b>11 需給コントロール</b><span>需要予測・配分・在庫最適化</span></div><div class="vision-card"><b>12 店舗運営・顧客体験</b><span>人員配置・接客・売場</span></div></div></section></div><div class="foundation-bar"><b>OWNDAYS PLATFORM</b><span>共通データ・共通マスター・AI・ID・認証・権限・API・Workflow・多言語・多国対応・監視・セキュリティ</span></div></main><footer class="slide-footer"><span>全社の方向性と12業務サービス</span><span class="slide-number"></span></footer></div></section>
+<section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 01 / 12</div><h2><span>01</span> 経営・事業計画</h2></div>
+<div class="category-pill">経営・成長基盤</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>部門ごとに目標・予算・人員を個別に作成</li><li>実績説明に時間を使い、将来の選択肢比較が限定的</li><li>投資・在庫・人員の判断が別々に行われる</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>売上・粗利・在庫・人員・投資の見込みを継続更新</li><li>複数シナリオを共通指標で比較</li><li>経営会議を方針・優先順位・資源配分の場へ転換</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">事業優先順位</span><span class="tag">投資・撤退</span><span class="tag">リスク許容度</span><span class="tag">重要例外</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>新規投資案を、売上・粗利・人員・在庫・資金への影響で比較し、経営判断に必要な論点だけを提示する。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">経営企画本部</span><span class="tag">海外事業部</span><span class="tag">ファイナンス本部</span></div></section>
+<section><b>関連サービス</b><p>財務・ガバナンス、人材・スキル・教育、海外・グローバル運営</p></section>
+<section><b>検証ポイント</b><p>経営計画と各部計画をどこまで同じデータ・指標で管理するか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>01 経営・事業計画</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 02 / 12</div><h2><span>02</span> 財務・ガバナンス</h2></div>
+<div class="category-pill">経営・成長基盤</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>売上・決済・仕入・支払・会計が分断</li><li>照合・仕訳・承認・監査に手作業が多い</li><li>国別差異と月末集中がある</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>取引発生から会計・支払・監査まで連続化</li><li>差異・異常・統制違反を継続監視</li><li>店舗・商品・国・チャネル別収益を迅速に把握</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">会計・税務方針</span><span class="tag">重要承認</span><span class="tag">重大リスク判断</span><span class="tag">法令対応</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>POS売上と決済入金を自動照合し、重要差異だけを原因候補付きで財務担当へ提示する。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">ファイナンス本部</span><span class="tag">経営企画本部</span><span class="tag">海外事業部</span></div></section>
+<section><b>関連サービス</b><p>経営・事業計画、店舗運営・顧客体験、海外・グローバル運営</p></section>
+<section><b>検証ポイント</b><p>どの統制を共通化し、何を国別要件として残すか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>02 財務・ガバナンス</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 03 / 12</div><h2><span>03</span> 事業開発・店舗開発</h2></div>
+<div class="category-pill">経営・成長基盤</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>市場調査・物件・設計施工・投資判断が案件ごとに分散</li><li>商圏・顧客・賃料・採用・物流情報がつながらない</li><li>アライアンス検討と出店計画が別管理</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>市場・商圏・競合・顧客を統合評価</li><li>物件・立地・店舗モデルごとの収益性を比較</li><li>設計施工・開業までの進捗とリスクを一元管理</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">立地判断</span><span class="tag">投資・交渉</span><span class="tag">店舗コンセプト</span><span class="tag">パートナー選定</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>候補物件を、標準店・小型店・高効率店舗の複数案で比較し、売上・人員・投資回収・顧客体験から採用案を決める。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">事業開発本部</span><span class="tag">経営企画本部</span><span class="tag">営業本部</span></div></section>
+<section><b>関連サービス</b><p>経営・事業計画、店舗運営・顧客体験、海外・グローバル運営</p></section>
+<section><b>検証ポイント</b><p>市場調査から設計施工・アライアンスまで、どこを一つの業務サービスとして扱うか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>03 事業開発・店舗開発</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 04 / 12</div><h2><span>04</span> 人材・スキル・教育</h2></div>
+<div class="category-pill">経営・成長基盤</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>採用・配置・育成・評価が個別管理</li><li>必要スキルと保有スキルが見えにくい</li><li>教育実績が配置・評価に十分つながらない</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>店舗・職種ごとの必要スキルを可視化</li><li>需要とスキルに応じて採用・配置・育成を連動</li><li>教育成果を業務実績・評価へ接続</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">採用方針</span><span class="tag">配置の最終判断</span><span class="tag">育成方針</span><span class="tag">評価・処遇</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>繁忙予測とスタッフスキルを踏まえ、採用・異動・教育の選択肢を比較し、必要な人員計画を決める。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">人事本部</span><span class="tag">営業本部</span><span class="tag">DX推進本部</span></div></section>
+<section><b>関連サービス</b><p>経営・事業計画、店舗運営・顧客体験</p></section>
+<section><b>検証ポイント</b><p>スキル情報をどの粒度で管理し、配置・教育・評価にどうつなげるか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>04 人材・スキル・教育</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 05 / 12</div><h2><span>05</span> 海外・グローバル運営</h2></div>
+<div class="category-pill">経営・成長基盤</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>国ごとに業務・システム・マスターが異なる</li><li>同じ課題を各国で個別に解決</li><li>共通化とローカル要件の判断基準が曖昧</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>共通業務・共通マスター・共通KPIを明確化</li><li>国別要件を差分として管理</li><li>施策・機能・知見を国を越えて再利用</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">共通化方針</span><span class="tag">国別例外</span><span class="tag">導入優先順位</span><span class="tag">現地責任</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>受付・決済・在庫などの共通機能を標準化し、税制・商習慣・法規制のみローカル要件として管理する。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">海外事業部</span><span class="tag">オンライン事業本部</span><span class="tag">ブランド戦略本部</span></div></section>
+<section><b>関連サービス</b><p>経営・事業計画、財務・ガバナンス、各業務サービス</p></section>
+<section><b>検証ポイント</b><p>グローバル標準とローカル要件を誰が、どの基準で決定するか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>05 海外・グローバル運営</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 06 / 12</div><h2><span>06</span> マーケティング・EC</h2></div>
+<div class="category-pill">経営・成長基盤</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>CRM・EC・アプリ・販促データが分散</li><li>店舗とオンラインの顧客行動がつながらない</li><li>施策効果の評価がチャネル別に留まる</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>CRMを基点に店舗・EC・APPの顧客体験を接続</li><li>顧客ごとに適切な情報・商品・タイミングを提示</li><li>獲得から再来店・再購入まで効果を継続評価</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">顧客戦略</span><span class="tag">ブランド表現</span><span class="tag">施策優先順位</span><span class="tag">チャネル投資</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>来店・購買・試着・アプリ行動から顧客セグメントを更新し、店舗・EC・APPで一貫した提案を行う。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">ブランド戦略本部</span><span class="tag">オンライン事業本部</span></div></section>
+<section><b>関連サービス</b><p>店舗運営・顧客体験、商品企画、需給コントロール</p></section>
+<section><b>検証ポイント</b><p>CRM・オムニチャネル・APPをどこまで一つの顧客基盤として運営するか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>06 マーケティング・EC</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 07 / 12</div><h2><span>07</span> 商品企画</h2></div>
+<div class="category-pill">OWNDAYSエコシステム</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>販売実績と担当者経験を中心に商品構成を検討</li><li>試着・検索・接客・欠品データが十分につながらない</li><li>商品戦略と商品構成の議論が資料作成中心</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>販売・試着・検索・接客から商品機会を発見</li><li>市場・顧客・価格帯ごとの商品構成案を比較</li><li>発売後実績を次の商品戦略へ継続還流</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">ブランド</span><span class="tag">商品戦略</span><span class="tag">商品構成</span><span class="tag">最終商品化判断</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>複数の商品構成案を、顧客ニーズ・ブランド・売上機会・カニバリの観点から比較し、採用案を編集する。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">商品戦略本部</span><span class="tag">ブランド戦略本部</span><span class="tag">海外事業部</span></div></section>
+<section><b>関連サービス</b><p>商品計画、需給コントロール、マーケティング・EC</p></section>
+<section><b>検証ポイント</b><p>商品戦略と商品構成をどの単位・周期で見直すか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>07 商品企画</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 08 / 12</div><h2><span>08</span> 商品計画</h2></div>
+<div class="category-pill">OWNDAYSエコシステム</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>PLM・仕様・数量・発注情報が分散</li><li>仕様変更の影響確認に時間がかかる</li><li>数量計画と発注が販売計画・在庫と十分連動しない</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>企画から発売・終売までPLMで一元管理</li><li>仕様変更時に原価・納期・品質影響を即時把握</li><li>数量計画・発注を需給コントロール・生産計画と連動</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">最終仕様</span><span class="tag">数量計画</span><span class="tag">発注承認</span><span class="tag">発売・終売</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>仕様や数量を変更した際、原価・納期・品質・在庫影響を比較し、最終計画と発注を決める。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">商品戦略本部</span><span class="tag">サプライチェーン戦略本部</span></div></section>
+<section><b>関連サービス</b><p>商品企画、調達・生産・品質、需給コントロール</p></section>
+<section><b>検証ポイント</b><p>PLM・数量計画・発注をどこまで同一業務として管理するか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>08 商品計画</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 09 / 12</div><h2><span>09</span> 調達・生産・品質</h2></div>
+<div class="category-pill">OWNDAYSエコシステム</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>原価・工場・生産進捗・品質問題が分断</li><li>工場との連絡や催促がメール中心</li><li>遅延・品質悪化を事後把握</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>原価・工場能力・進捗・品質を統合管理</li><li>遅延・品質悪化を予兆検知</li><li>代替工場・数量・納期変更を比較</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">サプライヤー戦略</span><span class="tag">価格・契約交渉</span><span class="tag">重大品質判断</span><span class="tag">供給判断</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>主力工場の遅延予兆に対し、継続・工場振替・数量変更を原価・納期・品質リスクで比較する。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">サプライチェーン戦略本部</span><span class="tag">商品戦略本部</span></div></section>
+<section><b>関連サービス</b><p>商品計画、貿易・物流、需給コントロール</p></section>
+<section><b>検証ポイント</b><p>原価・生産進捗・品質をどの範囲まで共通管理するか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>09 調達・生産・品質</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 10 / 12</div><h2><span>10</span> 貿易・物流</h2></div>
+<div class="category-pill">OWNDAYSエコシステム</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>輸送・通関・ETA・入荷予定が分散</li><li>書類確認と輸送追跡が手作業</li><li>欠品影響と物流費を別々に判断</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>出荷・輸送・通関・ETA・入荷を連続管理</li><li>書類差異・不足・遅延を予兆検知</li><li>船・航空・クーリエ・分納を比較</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">フォワーダー交渉</span><span class="tag">通関例外</span><span class="tag">緊急輸送</span><span class="tag">費用と販売機会</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>到着遅延時に、船継続・一部航空便・分納を、追加費用・欠品・売上影響で比較する。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">サプライチェーン戦略本部</span><span class="tag">商品戦略本部</span><span class="tag">ファイナンス本部</span></div></section>
+<section><b>関連サービス</b><p>調達・生産・品質、需給コントロール、財務・ガバナンス</p></section>
+<section><b>検証ポイント</b><p>国際物流と国内入荷・倉庫連携をどこまで一つのサービスに含めるか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>10 貿易・物流</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 11 / 12</div><h2><span>11</span> 需給コントロール</h2></div>
+<div class="category-pill">OWNDAYSエコシステム</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>需要予測・配分・在庫判断が担当者と個別資料に依存</li><li>店舗別・SKU別の販売機会と過剰在庫を事後把握</li><li>配分変更や在庫移動の影響比較が難しい</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>需要予測を継続更新</li><li>店舗・国・チャネルへの配分案を比較</li><li>在庫配置を最適化し、欠品と過剰在庫を同時に抑制</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">配分方針</span><span class="tag">戦略商品</span><span class="tag">国・店舗優先順位</span><span class="tag">大きな在庫移動</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>販売予測と在庫状況から複数の配分案を提示し、売上機会・在庫日数・店舗特性を踏まえて配分を決める。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">商品戦略本部</span><span class="tag">営業本部</span></div></section>
+<section><b>関連サービス</b><p>商品企画、商品計画、貿易・物流、店舗運営・顧客体験</p></section>
+<section><b>検証ポイント</b><p>需給コントロールのオーナーと、需要予測・配分・在庫最適化の判断範囲を明確にできるか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>11 需給コントロール</span><span class="slide-number"></span></footer>
+</div></section><section class="slide slide--light service-slide">
+<div class="slide__inner">
+<header class="service-header">
+<div><div class="eyebrow">BUSINESS SERVICE 12 / 12</div><h2><span>12</span> 店舗運営・顧客体験</h2></div>
+<div class="category-pill">OWNDAYSエコシステム</div>
+</header>
+<main class="service-content">
+<div class="comparison">
+<article class="comparison-panel comparison-panel--current"><div class="panel-label">CURRENT</div><h3>現在</h3><ul><li>人員配置・接客・売場・店舗タスクが個別管理</li><li>顧客情報と店頭体験が十分につながらない</li><li>混雑・作業順・売場変更が現場経験に依存</li></ul></article>
+<div class="comparison-connector" aria-hidden="true"><span></span></div>
+<article class="comparison-panel comparison-panel--future"><div class="panel-label">THREE YEARS LATER</div><h3>3年後</h3><ul><li>来店・業務量・スタッフスキルに応じて人員配置を最適化</li><li>接客・測定・購入・保証・受取を顧客カルテで接続</li><li>VMD・店舗レイアウト・セルフサービスを顧客体験として一体運営</li></ul></article>
+</div>
+<div class="decision-scenario-grid">
+<article class="decision-card"><div class="card-kicker">HUMAN DECISION</div><h3>人に残す判断</h3><div class="tag-list"><span class="tag">顧客対応</span><span class="tag">配置の最終判断</span><span class="tag">高度な接客</span><span class="tag">売場・店舗体験</span></div></article>
+<article class="scenario-card"><div class="card-kicker">REPRESENTATIVE SCENARIO</div><h3>代表シナリオ</h3><p>当日の来店と業務量を予測し、人員配置・接客順・売場対応を調整しながら、顧客カルテを次の接点へ引き継ぐ。</p></article>
+</div>
+<div class="service-metadata">
+<section><b>関連部門</b><div class="department-list"><span class="tag">営業本部</span><span class="tag">DX推進本部</span></div></section>
+<section><b>関連サービス</b><p>マーケティング・EC、需給コントロール、人材・スキル・教育</p></section>
+<section><b>検証ポイント</b><p>店舗運営・接客・顧客カルテ・売場を一つの業務サービスとして扱う範囲はどこまでか。</p></section>
+</div>
+</main>
+<footer class="slide-footer"><span>12 店舗運営・顧客体験</span><span class="slide-number"></span></footer>
+</div></section>
+<section class="slide slide--light final-slide"><div class="slide__inner"><section class="discussion-section"><div class="eyebrow">DISCUSSION POINTS FOR EACH FUNCTION</div><h2>各部門でディスカッションいただきたいこと</h2><div class="discussion-grid"><article class="discussion-card"><b>3年後の姿</b><span>部門が目指す業務状態と、変えたい意思決定を明確にする。</span></article><article class="discussion-card"><b>業務サービス</b><span>不足・重複・名称・対象範囲・関連部門を確認する。</span></article><article class="discussion-card"><b>優先順位</b><span>最初に取り組む業務テーマと、実現時期を整理する。</span></article></div><div class="discussion-note">「AI導入」「データ一元化」「システム刷新」から考えるのではなく、3年後の業務状態と、どの判断がどう変わるかから考える。</div></section><section class="architecture-section"><div class="eyebrow">FUTURE APPLICATION ARCHITECTURE</div><p class="architecture-context">以下は、3年後の業務像を具体化するための議論用イメージです。確定案ではなく、各部門で目指す姿と必要な仕組みを検討するためのたたき台です。</p><div class="architecture-stack"><div class="architecture-layer"><div class="layer-label">BUSINESS MINI APPLICATIONS</div><div class="app-grid"><div class="arch-card">経営モニタリング</div><div class="arch-card">店舗開発支援</div><div class="arch-card">商品企画支援</div><div class="arch-card">需給コントロール</div><div class="arch-card">CRM・オムニチャネル</div><div class="arch-card">店舗運営支援</div><div class="arch-card">人材・教育</div></div></div><div class="architecture-layer"><div class="layer-label">INTELLIGENCE LAYER</div><div class="intel-grid"><div class="intel-card"><b>市場・競合インテリジェンス</b><span>市場・競合・価格・検索トレンド</span></div><div class="intel-card"><b>商圏インテリジェンス</b><span>人流・商圏・物件・地域イベント</span></div><div class="intel-card"><b>商品・需給インテリジェンス</b><span>商品動向・供給環境・在庫・需要</span></div><div class="intel-card"><b>顧客インテリジェンス</b><span>購買・行動・SNS・レビュー</span></div></div></div><div class="architecture-layer"><div class="layer-label">OWNDAYS PLATFORM</div><div class="platform-foundation"><b>共通データ・AI・ID・API・Workflow・権限</b><span>共通マスター・認証・多言語・多国対応・監視・セキュリティ</span></div></div></div></section><footer class="slide-footer"><span>部門ディスカッションと将来アプリケーション構成</span><span class="slide-number"></span></footer></div></section>
+</div><div class="edge left" id="edgeLeft"></div><div class="edge right" id="edgeRight"></div><button class="nav left" id="prev">←</button><button class="nav right" id="next">→</button><div class="mobile-nav"><button id="mobilePrev">← 前へ</button><div class="mobile-count" id="mobileCount"></div><button id="mobileNext">次へ →</button></div><script>
+const slides=[...document.querySelectorAll('.slide')];let current=0;
+slides.forEach((slide,index)=>{const el=slide.querySelector('.slide-number');if(el)el.textContent=`${String(index+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;});
+function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));mobileCount.textContent=`${current+1} / ${slides.length}`;mobilePrev.disabled=current===0;mobileNext.disabled=current===slides.length-1;mobilePrev.style.opacity=current===0?'.45':'1';mobileNext.style.opacity=current===slides.length-1?'.45':'1';}
+function next(){show(current+1)}function prev(){show(current-1)}
+const nextBtn=document.getElementById('next');const prevBtn=document.getElementById('prev');const mobileCount=document.getElementById('mobileCount');const mobilePrev=document.getElementById('mobilePrev');const mobileNext=document.getElementById('mobileNext');const edgeRight=document.getElementById('edgeRight');const edgeLeft=document.getElementById('edgeLeft');
+nextBtn.onclick=next;prevBtn.onclick=prev;edgeRight.onclick=next;edgeLeft.onclick=prev;mobileNext.onclick=next;mobilePrev.onclick=prev;
+document.addEventListener('keydown',e=>{if(['ArrowRight','PageDown'].includes(e.key))next();if(['ArrowLeft','PageUp'].includes(e.key))prev();if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});
+let sx=0,sy=0;document.addEventListener('touchstart',e=>{sx=e.changedTouches[0].screenX;sy=e.changedTouches[0].screenY},{passive:true});document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-sx,dy=e.changedTouches[0].screenY-sy;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.15)(dx<0?next():prev)()},{passive:true});show(0);
+</script></body></html>
